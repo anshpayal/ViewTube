@@ -2,8 +2,13 @@ import React from "react";
 import { IoHomeOutline, IoVideocamOutline } from "react-icons/io5";
 import { MdOutlineSubscriptions, MdHistory } from "react-icons/md";
 import { FiClock } from "react-icons/fi";
+import { useSelector } from "react-redux";
 
 const SideBar = () => {
+  const isMenuOpen = useSelector((store)=> store.app.isMenuOpen);
+
+  if(!isMenuOpen) return null;
+  
   return (
     <div className="w-52 h-screen p-3 text-lg border-r border-gray-300">
       <div>

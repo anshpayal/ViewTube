@@ -12,7 +12,7 @@ const Header = () => {
     dispatch(hideMenu());
   };
   return (
-    <div className=" flex items-center justify-between border border-b-gray-300">
+    <div className=" flex items-center justify-between border border-b-gray-300 shadow-lg">
       <div className="flex items-center">
         <span className="text-2xl mx-8 cursor-pointer" onClick={handleclick}>
           <TfiAlignJustify />

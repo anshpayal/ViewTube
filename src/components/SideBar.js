@@ -10,7 +10,7 @@ const SideBar = () => {
   if(!isMenuOpen) return null; //earlier return 
   
   return (
-    <div className="w-52 h-screen p-3 text-lg border-r border-gray-300">
+    <div className="p-3 text-lg ">
       <div>
         <ul>
           <li className="flex items-center my-4">

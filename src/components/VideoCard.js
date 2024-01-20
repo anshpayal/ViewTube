@@ -7,16 +7,16 @@ const VideoCard = (props) => {
     if (count >= 1000000) {
       return `${(count / 1000000).toFixed(1)}M`;
     } else if (count >= 1000) {
-      return `${(count / 1000).toFixed(1)}K`;
+      return `${(count / 1000).toFixed(0)}K`;
     } else {
       return count.toString();
     }
   };
   return (
-    <div className="flex flex-wrap gap-16">
+    <div className="flex flex-col gap-y-12 flex-wrap sm:flex-row sm:gap-x-14 ">
       {data.map((videoData) => {
         return (
-          <div className="w-80 rounded-lg p-4 border border-gray-300 hover:shadow-gray-500 hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
+          <div key={videoData.id} className="w-80 rounded-lg p-4 border border-gray-300 hover:shadow-gray-500 hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
             <img
               className="rounded-xl"
               alt="thumbnail"

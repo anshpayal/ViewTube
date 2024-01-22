@@ -1,5 +1,9 @@
+import { useDispatch } from "react-redux";
 import useVideoData from "../utils/useVideoData";
+import { closeMenu } from "../redux store/appSlice";
 const WatchPage = () => {
+  const dispath = useDispatch();
+  dispath(closeMenu());
   const videoData = useVideoData();
   console.log(videoData);
   return (

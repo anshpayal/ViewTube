@@ -21,7 +21,7 @@ const Header = () => {
       </div>
       <div className="w-5/12 flex items-center">
         <input
-          className="w-full h-11 p-3 rounded-l-3xl border border-gray-200 outline-none"
+          className="w-full h-11 text-xl p-3 rounded-l-3xl border border-gray-200 outline-none"
           type="text"
           placeholder="Search"
         ></input>

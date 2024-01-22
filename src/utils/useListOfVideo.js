@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { YOUTUBE_API } from "./Links";
 
-const useFetchVideoData = () => {
-  const [videoData, setVideoData] = useState(null);
+const useListOfVideo = () => {
+  const [listOfVideo, setListOfVideo] = useState(null);
   useEffect(() => {
     fetchData();
   }, []);
@@ -11,9 +11,9 @@ const useFetchVideoData = () => {
     const data = await fetch(YOUTUBE_API);
     const json = await data.json();
     //console.log(json.items);
-    setVideoData(json.items);
+    setListOfVideo(json.items);
   };
-  return videoData;
+  return listOfVideo;
 };
 
-export default useFetchVideoData;
+export default useListOfVideo;

@@ -3,22 +3,25 @@ import { IoHomeOutline, IoVideocamOutline } from "react-icons/io5";
 import { MdOutlineSubscriptions, MdHistory } from "react-icons/md";
 import { FiClock } from "react-icons/fi";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
-  const isMenuOpen = useSelector((store)=> store.app.isMenuOpen);
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  if(!isMenuOpen) return null; //earlier return 
-  
+  if (!isMenuOpen) return null; //earlier return
+
   return (
     <div className="p-3 text-lg ">
       <div>
         <ul>
-          <li className="flex items-center my-4">
-            <span className="text-2xl mx-5">
-              <IoHomeOutline />
-            </span>
-            Home
-          </li>
+          <Link to="/">
+            <li className="flex items-center my-4">
+              <span className="text-2xl mx-5">
+                <IoHomeOutline />
+              </span>
+              Home
+            </li>
+          </Link>
           <li className="flex items-center my-4">
             <span className="text-2xl mx-5">
               <MdOutlineSubscriptions />{" "}

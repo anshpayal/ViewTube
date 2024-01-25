@@ -13,7 +13,7 @@ const VideoCard = (props) => {
     }
   };
   return (
-    <div className="flex flex-col gap-y-12 flex-wrap sm:flex-row  justify-center sm:gap-x-12">
+    <>
       {data.map((videoData) => {
         return (
           <Link key={videoData.id} to= {"/watch?v="+videoData.id}>
@@ -40,7 +40,7 @@ const VideoCard = (props) => {
           </Link>
         );
       })}
-    </div>
+    </>
   );
 };
 

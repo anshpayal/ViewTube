@@ -26,7 +26,7 @@ const WatchPage = () => {
 
   return (
     <div className="w-full">
-      <div className="w-full p-6  my-8 sm:w-7/12 sm:mx-24  overflow-hidden">
+      <div className="w-full p-6 my-4 sm:w-7/12 sm:mx-24  overflow-hidden">
         <iframe
           className="w-full h-[65vh] rounded-3xl"
           src={

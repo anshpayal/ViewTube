@@ -3,13 +3,13 @@ import useVideoData from "../utils/useVideoData";
 import { closeMenu } from "../redux store/appSlice";
 import { GoBell } from "react-icons/go";
 import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
+import CommentContainer from "./CommentContainer";
 
 const WatchPage = () => {
   const dispath = useDispatch();
   dispath(closeMenu());
 
   const videoData = useVideoData();
-  console.log(videoData);
 
 
   if (videoData === null) return "Loading";
@@ -64,6 +64,7 @@ const WatchPage = () => {
             </span>
           </div>
         </div>
+        <CommentContainer/>
       </div>
     </div>
   );

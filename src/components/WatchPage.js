@@ -4,6 +4,7 @@ import { closeMenu } from "../redux store/appSlice";
 import { GoBell } from "react-icons/go";
 import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 import CommentContainer from "./CommentContainer";
+import LiveChatContainer from "./LiveChatContainer";
 
 const WatchPage = () => {
   const dispath = useDispatch();
@@ -25,7 +26,7 @@ const WatchPage = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex">
       <div className="w-full p-6 my-4 sm:w-7/12 sm:mx-24  overflow-hidden">
         <iframe
           className="w-full h-[65vh] rounded-3xl"
@@ -65,6 +66,9 @@ const WatchPage = () => {
           </div>
         </div>
         <CommentContainer/>
+      </div>
+      <div className="w-4/12 mx-4 my-10">
+        <LiveChatContainer/>
       </div>
     </div>
   );

@@ -1,9 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LiveChatMessage from "./LiveChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { addMessage } from "../redux store/LiveChatSlice";
+import {
+  generateRandomName,
+  generateRandomMessage,
+} from "../utils/HelperFunction";
+import { AiOutlineSend } from "react-icons/ai";
 
 const LiveChatContainer = () => {
+  const [chatMessage, setChatMessage] = useState("");
   const dispatch = useDispatch();
   const liveMessages = useSelector((store) => store.LiveChat.message);
 
@@ -13,8 +19,8 @@ const LiveChatContainer = () => {
 
       dispatch(
         addMessage({
-          name: "Ansh",
-          message: "First message",
+          name: generateRandomName(),
+          message: generateRandomMessage(),
         })
       );
     }, 2000);
@@ -24,11 +30,36 @@ const LiveChatContainer = () => {
   }, []);
 
   return (
-    <div className="border border-gray-500 p-4 w-full rounded-lg h-[65vh] bg-gray-100 overflow-y-scroll flex-reverse">
-      {liveMessages.map((message,index) => {
-        return <LiveChatMessage key={index} data={message} />;
-      })}
-    </div>
+    <>
+      <div className="border border-black p-4 w-full rounded-lg h-[65vh] overflow-y-scroll flex flex-col-reverse">
+        {liveMessages.map((message, index) => {
+          return <LiveChatMessage key={index} data={message} />;
+        })}
+      </div>
+      <form
+        className="w-full my-2 flex justify-center border-2 border-black rounded-lg"
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch(addMessage({
+            name:"Ansh Payal",
+            message:chatMessage
+          }))
+          setChatMessage("");
+        }}
+      >
+        <input
+          className="w-full p-2 outline-none"
+          placeholder="Chat"
+          value={chatMessage}
+          onChange={(e) => {
+            setChatMessage(e.target.value);
+          }}
+        ></input>
+        <button className="text-3xl p-1 mx-2 ">
+          <AiOutlineSend />
+        </button>
+      </form>
+    </>
   );
 };
 

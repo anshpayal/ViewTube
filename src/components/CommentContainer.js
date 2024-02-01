@@ -144,13 +144,13 @@ const commentsData = [
 const Comment = ({ data }) => {
   const { name, comment } = data;
   return (
-    <div className="flex items-center p-2 my-2 bg-gray-200 rounded-xl">
-      <span className="mx-3 text-4xl">
+    <div className="flex items-center p-1 sm:p-2 my-2 bg-gray-200 rounded-xl">
+      <span className="mx-3 text-xl sm:text-4xl">
         <FaCircleUser />
       </span>
       <div>
-        <p className="text-lg">{name}</p>
-        <p className="text-gray-700">{comment}</p>
+        <p className="sm:text-lg">{name}</p>
+        <p className="text-sm sm:text-lg text-gray-700">{comment}</p>
       </div>
     </div>
   );
@@ -175,8 +175,8 @@ const CommentList = ({ comments }) => {
 
 const CommentContainer = () => {
   return (
-    <div className="my-8 font-semibold">
-      <p className="text-2xl font-semibold">Comments ({commentsData.length})</p>
+    <div className=" my-16 sm:my-8 font-semibold">
+      <p className="text-lg sm:text-2xl font-semibold">Comments ({commentsData.length})</p>
       <CommentList comments={commentsData} />
     </div>
   );

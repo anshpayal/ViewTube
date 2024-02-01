@@ -27,13 +27,13 @@ const VideoCard = (props) => {
                 src={videoData?.snippet?.thumbnails?.maxres?.url ||DefaultThumbnail}
               ></img>
               <div className="w-full">
-                <p className="text-lg mt-2 font-semibold">
+                <p className="sm:text-lg mt-2 font-semibold">
                   {videoData.snippet.localized.title}
                 </p>
-                <p className="mt-1 text-gray-600">
+                <p className="text-sm sm:text-lg mt-1 text-gray-600">
                   {videoData?.snippet?.channelTitle}
                 </p>
-                <span className="text-gray-600">
+                <span className="text-sm sm:text-lg text-gray-600">
                   {formatViewCount(videoData?.statistics.viewCount)} views
                 </span>
               </div>

@@ -66,15 +66,15 @@ const Header = () => {
   return (
     <div className=" flex items-center justify-between border border-b-gray-300 shadow-lg">
       <div className="flex items-center">
-        <span className="text-2xl mx-8 cursor-pointer" onClick={handleclick}>
+        <span className=" text-xl mx-3 sm:text-2xl sm:mx-8 cursor-pointer" onClick={handleclick}>
           <TfiAlignJustify />
         </span>
-        <img className="w-20 h-20 cursor-pointer" alt="logo" src={Logo} />
+        <img className="w-14 h-14 sm:w-20 sm:h-20 cursor-pointer" alt="logo" src={Logo} />
       </div>
-      <div className=" relative z-10 w-5/12">
+      <div className="relative z-10 w-5/12 mr-6">
         <div className="flex items-center">
           <input
-            className="w-full h-11 text-lg px-7  rounded-l-3xl border border-gray-200 outline-none"
+            className=" w-32 h-8 text-sm px-2 sm:w-full sm:h-11 sm:text-lg sm:px-7  rounded-l-3xl border border-gray-200 outline-none"
             type="text"
             placeholder="Search"
             value={searchValue}
@@ -84,18 +84,18 @@ const Header = () => {
             onFocus={handleFocus}
             onBlur={handleblur}
           ></input>
-          <button className=" text-2xl px-6 h-11 bg-gray-300 rounded-r-3xl hover:bg-gray-200">
+          <button className=" text-lg px-3 h-8 sm:text-2xl sm:px-6 sm:h-11 bg-gray-300 rounded-r-3xl hover:bg-gray-200">
             <FiSearch />
           </button>
         </div>
-        <div className="my-1 absolute top-full left-0 bg-white shadow-xl w-11/12 rounded-2xl">
+        <div className="my-1 absolute top-full left-0 bg-white shadow-xl w-full rounded-lg sm:w-11/12 sm:rounded-2xl">
           <ul>
             {showSuggestion &&
               suggestions.map((suggestion, index) => {
                 return (
                   <li
                     key={index}
-                    className="p-2 text-lg flex items-center hover:bg-gray-200"
+                    className="p-2 text-sm sm:text-lg flex items-center hover:bg-gray-200"
                   >
                     {" "}
                     <span className="mr-2">
@@ -109,7 +109,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex mr-8 text-4xl gap-x-6">
+      <div className="flex text-2xl mr-4  sm:text-4xl sm:mr-8">
         <FaCircleUser />
       </div>
     </div>

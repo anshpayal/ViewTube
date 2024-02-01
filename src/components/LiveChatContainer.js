@@ -31,13 +31,13 @@ const LiveChatContainer = () => {
 
   return (
     <>
-      <div className="border border-black p-4 w-full rounded-lg h-[65vh] overflow-y-scroll flex flex-col-reverse">
+      <div className=" border border-black p-4 w-full rounded-lg h-[65vh] overflow-y-scroll flex flex-col-reverse">
         {liveMessages.map((message, index) => {
           return <LiveChatMessage key={index} data={message} />;
         })}
       </div>
       <form
-        className="w-full my-2 flex justify-center border-2 border-black rounded-lg"
+        className="w-full p-1 my-2 flex justify-center border border-black rounded-lg"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(addMessage({

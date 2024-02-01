@@ -8,10 +8,16 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
+  const sidebarClasses = `
+    p-3 text-lg fixed left-0 h-full bg-white z-50 transition-transform
+    ${isMenuOpen ? "transform translate-x-0 bg-opacity-90" : "transform -translate-x-full"}
+    lg:translate-x-0 lg:static lg:block
+  `;
+
   if (!isMenuOpen) return null; //earlier return
 
   return (
-    <div className="p-3 text-lg ">
+    <div className={sidebarClasses}>
       <div>
         <ul>
           <Link to="/">

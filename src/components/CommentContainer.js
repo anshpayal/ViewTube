@@ -20,7 +20,14 @@ const commentsData = [
             name: "User",
             comment:
               "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-            replies: [],
+            replies: [
+              {
+                name: "User",
+                comment:
+                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                replies: [],
+              }
+            ],
           },
         ],
       },
@@ -88,12 +95,39 @@ const commentsData = [
   {
     name: "David",
     comment: "Impressive work!",
-    replies: [],
+    replies: [
+      {
+        name: "User",
+        comment:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+        replies: [
+          {
+            name: "User",
+            comment:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            replies: [],
+          },
+          {
+            name: "User",
+            comment:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            replies: [],
+          }
+        ],
+      }
+    ],
   },
   {
     name: "Jessica",
     comment: "I don't understand it.",
-    replies: [],
+    replies: [
+      {
+        name: "User",
+        comment:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+        replies: [],
+      }
+    ],
   },
   {
     name: "Daniel",
@@ -103,16 +137,6 @@ const commentsData = [
   {
     name: "Olivia",
     comment: "I have no words.",
-    replies: [],
-  },
-  {
-    name: "Andrew",
-    comment: "Keep up the good work!",
-    replies: [],
-  },
-  {
-    name: "Sophia",
-    comment: "Interesting concept.",
     replies: [],
   },
 ];

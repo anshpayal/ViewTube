@@ -1,4 +1,5 @@
 import React from "react";
+import DefaultThumbnail from "../default-video-thumbnail.png"
 import { Link } from "react-router-dom";
 const VideoCard = (props) => {
   const { data } = props;
@@ -23,7 +24,7 @@ const VideoCard = (props) => {
               <img
                 className="rounded-xl"
                 alt="thumbnail"
-                src={videoData?.snippet?.thumbnails?.maxres?.url}
+                src={videoData?.snippet?.thumbnails?.maxres?.url ||DefaultThumbnail}
               ></img>
               <div className="w-full">
                 <p className="text-lg mt-2 font-semibold">

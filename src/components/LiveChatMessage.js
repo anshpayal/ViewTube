@@ -2,7 +2,6 @@ import React from "react";
 import { FaCircleUser } from "react-icons/fa6";
 
 const LiveChatMessage = ({data}) => {
-  console.log(data);
   return (
     <div className="my-2 flex items-center bg-gray-300 p-3 shadow-lg border-b-2 border-gray-400 rounded-lg">
       <span className="text-2xl mx-2">

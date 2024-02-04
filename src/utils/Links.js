@@ -1,5 +1,6 @@
-const API_KEY="AIzaSyCH9Ec1irS24MLkc4n1PSrEqLZ5KCkjt80";
+const API_KEY="AIzaSyAXBJFapplHJUXmelfR80bRhKF_hxpKkyE";
 
 export const YOUTUBE_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=IN&key="+API_KEY;
 export const VIDEO_DATA = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key="+API_KEY+"&id="
 export const YOUTUBE_SEARCHSUGGESTIONS_API= "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
+export const YOUTUBE_SEARCH='https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&key='+API_KEY+"&q="; 

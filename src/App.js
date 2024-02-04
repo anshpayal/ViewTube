@@ -1,8 +1,8 @@
 import "./App.css";
-import Header from "./components/Header";
 import Body from "./components/Body";
 import MainContainer from "./components/MainContainer"
 import WatchPage from "./components/WatchPage";
+import SearchedResultPage from "./components/SearchedResultPage";
 import appStore from "./redux store/appStore";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -19,6 +19,10 @@ const appRoute = createBrowserRouter([
       {
         path:"watch",
         element: <WatchPage/>
+      },
+      {
+        path:"result",
+        element:<SearchedResultPage/>
       }
     ],
   },
@@ -28,7 +32,6 @@ function App() {
   return (
     <Provider store={appStore}>
       <div>
-        <Header />
         <RouterProvider router={appRoute} />
       </div>
     </Provider>

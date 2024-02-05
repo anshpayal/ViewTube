@@ -14,7 +14,6 @@ const Header = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestion, setShowSuggestion] = useState(false);
 
-
   const searchCache = useSelector((store) => store.search);
 
   const dispatch = useDispatch();
@@ -25,9 +24,9 @@ const Header = () => {
   const handleclick = () => {
     dispatch(hideMenu());
   };
-  const handleFocus = ()=>{
+  const handleFocus = () => {
     setShowSuggestion(true);
-  }
+  };
   const searchSuggestions = async () => {
     const data = await fetch(YOUTUBE_SEARCHSUGGESTIONS_API + searchValue);
     const json = await data.json();
@@ -96,7 +95,7 @@ const Header = () => {
       <div className="relative z-10 w-5/12 mr-6 ">
         <div className="flex items-center">
           <input
-            ref={inputRef} 
+            ref={inputRef}
             className=" w-32 h-8 text-sm px-2 sm:w-full sm:h-11 sm:text-lg sm:px-7  rounded-l-3xl border border-gray-200 outline-none"
             type="text"
             placeholder="Search"
@@ -112,24 +111,29 @@ const Header = () => {
             </button>
           </Link>
         </div>
-        <div ref={suggestionListRef} 
-         className="my-1 absolute top-full left-0 bg-white shadow-xl w-full rounded-lg sm:w-11/12 sm:rounded-2xl">
+        <div
+          ref={suggestionListRef}
+          className="my-1 absolute top-full left-0 bg-white shadow-xl w-full rounded-lg sm:w-11/12 sm:rounded-2xl"
+        >
           <ul>
-            {showSuggestion && suggestions.map((suggestion, index) => {
-              return (
-                <Link key={index} to={"/result?search_query=" + suggestion}>
-                  <li
-                    className="p-2 text-sm sm:text-lg flex items-center hover:bg-gray-200"
-                    onClick={()=>{setSuggestions([])}}
-                  >
-                    <span className="mr-2">
-                      <FiSearch />
-                    </span>
-                    {suggestion}
-                  </li>
-                </Link>
-              );
-            })}
+            {showSuggestion &&
+              suggestions.map((suggestion, index) => {
+                return (
+                  <Link key={index} to={"/result?search_query=" + suggestion}>
+                    <li
+                      className="p-2 text-sm sm:text-lg flex items-center hover:bg-gray-200"
+                      onClick={() => {
+                        setSuggestions([]);
+                      }}
+                    >
+                      <span className="mr-2">
+                        <FiSearch />
+                      </span>
+                      {suggestion}
+                    </li>
+                  </Link>
+                );
+              })}
           </ul>
         </div>
       </div>

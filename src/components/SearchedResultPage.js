@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const SearchedResultPage = () => {
   const listOfSearchedVideos = useListOfSearchedVideos();
   if (listOfSearchedVideos === null) return "Loading";
-  console.log(listOfSearchedVideos);
   return (
     <div className="w-full p-8 flex flex-col gap-6">
       {listOfSearchedVideos.map((video) => {
